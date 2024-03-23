@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise')
-const { database } = require('../config')
+const { database } = require('../config.exemple')
 
 module.exports = () => {
 
