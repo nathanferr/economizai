@@ -209,8 +209,8 @@ module.exports = () => {
                                     ,c.Nome
                                     ,c.Cor
                                     ,r.valor
-                                FROM receitas r
-                                JOIN categorias c
+                                FROM Receitas r
+                                JOIN Categorias c
                                 ON r.CategoriaId = c.Id
                                 WHERE r.UsuarioId = ? AND YEAR(r.DataCadastro) = ? AND MONTH(r.DataCadastro) = ?) v
                             GROUP BY c.Id, Nome, Cor`;
@@ -236,8 +236,8 @@ module.exports = () => {
                                     ,c.Nome
                                     ,c.Cor
                                     ,d.valor
-                                FROM despesas d
-                                JOIN categorias c
+                                FROM Despesas d
+                                JOIN Categorias c
                                 ON d.CategoriaId = c.Id
                                 WHERE d.UsuarioId = ? AND YEAR(d.DataCadastro) = ? AND MONTH(d.DataCadastro) = ?) v
                             GROUP BY c.Id, Nome, Cor`;
