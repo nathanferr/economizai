@@ -27,6 +27,7 @@ Passos para o sistema funcionar (levando em consideração que possui os itens l
 
 3. **Terceiro**: No terminal, utilizar o comando: `git clone [URL]`. Por exemplo, usando HTTPS:
     * `git clone https://github.com/nathanferr/economizai.git`
+    * Para funcionar o git clone, é necessário ter instalado o [git](https://git-scm.com/downloads) no computador. A versão utilizada nesse projeto foi a 2.42.0 Windows, mas vai depender do sistema operacional da sua maquina.
     * Após clonar o repositório, é importante estar no diretório ***sistema***, para isso basta no terminal dar o comando: `cd economizai/sistema`
 
 4. **Quarto**: Ja no diretório correto, utilizar o comando `npm install`, para instalar os pacotes necessários do node, será criado uma pasta com o nome *node_modules*. É um pouco pesado, e dependendo da maquina e internet pode demorar um pouco, mas basta esperar.
