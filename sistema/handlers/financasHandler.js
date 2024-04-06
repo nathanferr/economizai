@@ -110,5 +110,4 @@ module.exports = () => ({
 
         return response(false, 500, "Houve um erro ao tentar inserir uma finança");
     },
-
 })

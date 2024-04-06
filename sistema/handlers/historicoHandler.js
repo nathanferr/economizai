@@ -2,7 +2,8 @@ const financasRepository = require('../repository/financaRepository')();
 const financaModel = require('../models/financasModel');
 const { messages } = require('joi-translation-pt-br');
 const response = require('../shared/handlerResponse')
-const dateManager = require('../shared/dateManager')
+const dateManager = require('../shared/dateManager');
+const financaRepository = require('../repository/financaRepository');
 
 
 const validationReceita = (tipo) => {
@@ -89,5 +90,37 @@ module.exports = () => ({
 
         return response(false, 500, "Houve um erro ao tentar atualizar a receita ou despesa");
 
+    },
+    deletarFinanca: async (userId, financaId, tipo) => {
+        if(tipo == 'receita') {
+            const receita = await financasRepository.obterUmaReceitaPorId(userId, financaId);
+
+            if (!receita || receita.UsuarioId != userId) {
+                return response(false, 404, "Historico não encontrado");
+            }
+
+            const receitaExcluida = await financasRepository.deletarReceita(financaId);
+
+            if (receitaExcluida) {
+                return response(!!receitaExcluida, 200, "", );
+            }
+
+            return response(false, 500, "Houve um erro ao tentar excluir o historico");
+
+        } else {
+            const despesa = await financasRepository.obterUmaDespesaPorId(userId, financaId);
+
+            if (!despesa || despesa.UsuarioId != userId) {
+                return response(false, 404, "Historico não encontrado");
+            }
+
+            const despesaExcluida = await financasRepository.deletarDespesa(financaId);
+
+            if (despesaExcluida) {
+                return response(!!despesaExcluida, 200, "", );
+            }
+
+            return response(false, 500, "Houve um erro ao tentar excluir o historico");
+        }
     }
 })

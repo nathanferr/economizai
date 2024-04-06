@@ -54,7 +54,8 @@
                                     data-dataCadastro="<%=dado.DataCadastro%>" data-tipo="<%=dado.Tipo%>" data-valor="<%=dado.Valor%>" data-cor="<%=dado.Cor%>"
                                     data-target="#atualizarModal"><i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                            <button class="btn btn-action deletar" data-id="<%=dado.Id%>"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btn btn-action deletar" data-id="<%=dado.Id%>" data-tipo="<%=dado.Tipo%>">
+                                    <i class="fa-solid fa-trash"></i></button>
                                </td>
                             </tr>
                         <% }) %>
@@ -312,5 +313,39 @@ $(function () {
             console.log(data)
             atualizarHistorico(id, data)
         })
+
+        // ## DELETAR ==============================================
+        const deleteBtns = $('.deletar');
+        const deletarHistorico = async (id, tipo) => {
+            try {
+                let resultado = await fetch(`/historico/${id}/${tipo}`, {
+                    method: 'DELETE'
+                })
+
+                if(!resultado.ok) {
+                    alert(`Houve um erro ao tentar deletar o historico com ID: ${id}!`)
+                    return
+                }
+
+                alert(`Historico removido com sucesso!`)
+                window.location.reload()
+            }catch (e) {
+                console.log(e)
+                alert(`Houve um erro ao tentar deletar o historico com ID: ${id}!`)
+            }
+        }
+
+        const deletar = async (id, tipo) => {
+            const confirmarDelecao = confirm(`Você tem certeza que deseja remover o historico com o ID: ${id}`);
+            if(confirmarDelecao)
+                deletarHistorico(id, tipo)
+        }
+
+        $(deleteBtns).each((index, btn) => {
+            let id = $(btn).attr(`data-id`);
+            let tipo = $(btn).attr(`data-tipo`);
+            $(btn).click(async (e) => await deletar(id, tipo));
+        })
+
 </script>
 </html>

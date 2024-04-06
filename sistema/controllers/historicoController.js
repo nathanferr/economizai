@@ -35,4 +35,14 @@ module.exports = {
        return res.status((await response).status).json({message: response.message || response.response})
     },
     
+    historicoDelete: async (req, res) => {
+        cookieManager.containsCookie(req, res, '/')
+
+        const userId = cookieManager.decodeCookie(req)
+        cookieManager.validateId(userId);
+
+        const response = await historicoHandler.deletarFinanca(userId, req.params.id, req.params.tipo)
+
+       return res.status((await response).status).json({message: response.message || response.response})
+    }
 }

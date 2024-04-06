@@ -23,6 +23,7 @@ module.exports = (app) => {
     // HISTORICO
     app.get('/historico', historicoController.historicoGet);
     app.put('/historico/:id', historicoController.historicoPut);
+    app.delete('/historico/:id/:tipo', historicoController.historicoDelete);
 
     // CATEGORIA
     app.get('/categoria', categoriaController.categoriaGet);
@@ -30,7 +31,7 @@ module.exports = (app) => {
     app.put('/categoria/:id', categoriaController.categoriaPut);
     app.delete('/categoria/:id', categoriaController.categoriaDelete);
 
-    // FINANCAS - RECEITAS/DESPESAS/LIMITES
+    // FINANCAS - RECEITAS/DESPESAS
     app.post('/financas', financasController.financasPost)
 
 }
