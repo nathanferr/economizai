@@ -33,7 +33,7 @@ Passos para o sistema funcionar (levando em consideração que possui os itens l
 4. **Quarto**: Ja no diretório correto, utilizar o comando `npm install`, para instalar os pacotes necessários do node, será criado uma pasta com o nome *node_modules*. É um pouco pesado, e dependendo da maquina e internet pode demorar um pouco, mas basta esperar.
 
 5. **Quinto**: com tudo isso instalado, basta abrir o seu banco de dados, no caso desse projeto foi utilizado como principal o *MySQLWorkbench*.
-    * Com ele aberto e configurado (usuario, senha e porta), é necessário que o arquivo ***config.js*** seja atualizado com as suas informações (ele se encontra dentro do diretório ***economizai/sistema***).
+    * Com ele aberto e configurado (usuario, senha e porta), é necessário que o arquivo ***config.example*** seja atualizado com as suas informações (ele se encontra dentro do diretório ***economizai/sistema***). Após isso, não se esqueça de renomeá-lo para ***config.js***.
     * Basta apenas atualizar os seguintes dados:
         * host: 'localhost' -> esse aqui geralmente não muda, mas caso o seu estiver diferente, é importante atualizar.
         * user: 'root' -> importante manter entre aspas simples e colocar o usuário que foi definido no seu banco de dados.
