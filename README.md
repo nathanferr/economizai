@@ -9,12 +9,12 @@
 
 
 ## 📚 Descrição
-Este repositório contém os arquivos relacionados ao sistema do Trabalho de Conclusão de Curso (TCC) intitulado **"ECONOMIZAÍ - SISTEMA DE GESTÃO DE FINANÇAS PESSOAIS: PERSPECTIVAS E REFLEXÕES SOBRE CONTROLE DE ORÇAMENTOS"**. O TCC foi desenvolvido como parte do curso de **[Análise e Desenvolvimento de Sistemas](http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/)** na **[FATEC - Carapicuíba](http://www.fateccarapicuiba.edu.br)**.
+Este repositório contém os arquivos relacionados ao sistema do Trabalho de Graduação (TG) intitulado **"ECONOMIZAÍ - SISTEMA DE GESTÃO DE FINANÇAS PESSOAIS: PERSPECTIVAS E REFLEXÕES SOBRE CONTROLE DE ORÇAMENTOS"**. O TG foi desenvolvido como parte do curso de **[Análise e Desenvolvimento de Sistemas](http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/)** na **[FATEC - Carapicuíba](http://www.fateccarapicuiba.edu.br)**.
 
 ## 💻 Informações para o uso e modificações
-
 Usado para produzir e funcionar:
-* MySql -> Utilizado [MySQL Workbench](https://www.mysql.com/products/workbench/), mas funciona com outros (é necessário configurar).
+* O servidor do banco de dados -> [MySql](https://dev.mysql.com/downloads/mysql/).
+* Ferramenta visual MySql -> [MySQL Workbench](https://www.mysql.com/products/workbench/), mas funciona com outras (verificar compatibilidade).
 * Node 18.17 -> https://nodejs.org/en.
 * Vscode -> https://code.visualstudio.com
 
